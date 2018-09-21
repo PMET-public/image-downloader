@@ -206,9 +206,9 @@
     });
 
     // Periodically set the body padding to offset the height of the fixed position filters
-    setInterval(function () {
-      $('body').css('padding-top', $('#filters_container').height());
-    }, 200);
+    // setInterval(function () {
+    //   $('body').css('padding-top', $('#filters_container').height());
+    // }, 200);
   }
 
   var allImages = [];
