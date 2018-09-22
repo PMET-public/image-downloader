@@ -56,5 +56,5 @@ body
   background-position: center;
 }
 
-.open_image_button     { background-image: url("/images/open.png"); }
-.download_image_button { background-image: url("/images/download.png"); }
+.open_image_button     { background-image: url("/image-downloader/images/open.png"); }
+.download_image_button { background-image: url("/image-downloader/images/download.png"); }
