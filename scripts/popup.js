@@ -298,13 +298,13 @@
         visibleImages = visibleImages.filter(function (url) {
           var image = images_cache.children('img[src="' + encodeURI(url) + '"]')[0];
           return (ls.show_image_width_filter !== 'true' ||
-                   (ls.filter_min_width_enabled !== 'true' || ls.filter_min_width <= image.naturalWidth) &&
-                   (ls.filter_max_width_enabled !== 'true' || image.naturalWidth <= ls.filter_max_width)
-                 ) &&
-                 (ls.show_image_height_filter !== 'true' ||
-                   (ls.filter_min_height_enabled !== 'true' || ls.filter_min_height <= image.naturalHeight) &&
-                   (ls.filter_max_height_enabled !== 'true' || image.naturalHeight <= ls.filter_max_height)
-                 );
+              (ls.filter_min_width_enabled !== 'true' || ls.filter_min_width <= image.naturalWidth) &&
+              (ls.filter_max_width_enabled !== 'true' || image.naturalWidth <= ls.filter_max_width)
+            ) &&
+            (ls.show_image_height_filter !== 'true' ||
+              (ls.filter_min_height_enabled !== 'true' || ls.filter_min_height <= image.naturalHeight) &&
+              (ls.filter_max_height_enabled !== 'true' || image.naturalHeight <= ls.filter_max_height)
+            );
         });
       }
 
