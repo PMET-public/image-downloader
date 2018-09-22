@@ -22,13 +22,13 @@
     filter_url: '',
     filter_url_mode: 'normal',
     filter_min_width: 0,
-    filter_min_width_enabled: false,
+    filter_min_width_enabled: true,
     filter_max_width: 3000,
-    filter_max_width_enabled: false,
+    filter_max_width_enabled: true,
     filter_min_height: 0,
-    filter_min_height_enabled: false,
+    filter_min_height_enabled: true,
     filter_max_height: 3000,
-    filter_max_height_enabled: false,
+    filter_max_height_enabled: true,
     only_images_from_links: false,
     // Options
     // General
