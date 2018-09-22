@@ -39,7 +39,7 @@
     show_url_filter: true,
     show_image_width_filter: true,
     show_image_height_filter: true,
-    show_only_images_from_links: true,
+    show_only_images_from_links: false,
     // Images
     show_image_url: true,
     show_open_image_button: true,
