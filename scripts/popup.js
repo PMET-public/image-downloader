@@ -194,7 +194,7 @@
       'margin-top': (ls.show_image_url === 'true' ? 3 : -3) + 'px'
     });
 
-    jss.set('img', {
+    jss.set('#store-scraper img', {
       'min-width': ls.image_min_width + 'px',
       'max-width': ls.image_max_width + 'px',
       'border-width': ls.image_border_width + 'px',
