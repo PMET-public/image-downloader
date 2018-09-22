@@ -58,3 +58,7 @@ body
 
 .open_image_button     { background-image: url("/image-downloader/images/open.png"); }
 .download_image_button { background-image: url("/image-downloader/images/download.png"); }
+
+#image_width_filter_min_checkbox, #image_width_filter_max_checkbox, #image_height_filter_min_checkbox, #image_height_filter_max_checkbox {
+  display: none;
+} 
