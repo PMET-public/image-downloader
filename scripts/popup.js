@@ -10,12 +10,7 @@
   });
 
   function initializePopup() {
-    // Register download folder name listener
-    $('#folder_name_textbox')
-      .val(ls.folder_name)
-      .on('change', function () {
-        ls.folder_name = $.trim(this.value);
-      });
+    ls.folder_name = $('#folder_name_textbox').val('imgs-from-'+tabDomain.replace(/.*\/\//, '')).val()
 
     // Register file renaming listener
     $('#file_renaming_textbox')
@@ -351,7 +346,7 @@
           var index = rowIndex * columns + columnIndex;
           if (index === visibleImages.length) break;
 
-            tools_row.append('<td class="found-image" colspan="' + colspan + '"><input type="text" class="image_url_textbox" value="' + visibleImages[index].replace(tabDomain,'') + '" readonly /><br>' +
+            tools_row.append('<td class="found-image" colspan="' + colspan + '"><input type="text" class="image_url_textbox" value="' + visibleImages[index].replace(tabDomain,'') + '" readonly disabled /><br>' +
               '<span class="mdi mdi-open-in-new open_image_button" data-url="' + visibleImages[index] + '" title="Open in new tab" />' +
               '<span class="mdi mdi-download download_image_button" data-url="' + visibleImages[index] + '" title="Download" /></td>');
 
