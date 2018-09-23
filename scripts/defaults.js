@@ -21,13 +21,17 @@
     new_file_name: '',
     filter_url: '',
     filter_url_mode: 'normal',
-    filter_min_width: 0,
+    filter_min_width: 30,
+    filter_min_width_default: 0,
     filter_min_width_enabled: true,
     filter_max_width: 3000,
+    filter_max_width_default: 3000,
     filter_max_width_enabled: true,
-    filter_min_height: 0,
+    filter_min_height: 30,
+    filter_min_height_default: 0,
     filter_min_height_enabled: true,
     filter_max_height: 3000,
+    filter_max_height_default: 3000,
     filter_max_height_enabled: true,
     only_images_from_links: false,
     // Options
@@ -53,7 +57,6 @@
 
   for (var option in defaults) {
     if (ls[option] === undefined) ls[option] = defaults[option];
-    ls[option + '_default'] = defaults[option];
   }
 
   ls.options = JSON.stringify(Object.keys(defaults));
