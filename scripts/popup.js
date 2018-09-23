@@ -351,17 +351,10 @@
           var index = rowIndex * columns + columnIndex;
           if (index === visibleImages.length) break;
 
-          if (show_image_url) {
-            tools_row.append('<td><input type="text" class="image_url_textbox" value="' + visibleImages[index].replace(tabDomain,'') + '" readonly /></td>');
-          }
+            tools_row.append('<td class="found-image" colspan="' + colspan + '"><input type="text" class="image_url_textbox" value="' + visibleImages[index].replace(tabDomain,'') + '" readonly /><br>' +
+              '<span class="mdi mdi-open-in-new open_image_button" data-url="' + visibleImages[index] + '" title="Open in new tab" />' +
+              '<span class="mdi mdi-download download_image_button" data-url="' + visibleImages[index] + '" title="Download" /></td>');
 
-          if (show_open_image_button) {
-            tools_row.append('<td class="open_image_button" data-url="' + visibleImages[index] + '" title="Open in new tab">&nbsp;</td>');
-          }
-
-          if (show_download_image_button) {
-            tools_row.append('<td class="download_image_button" data-url="' + visibleImages[index] + '" title="Download">&nbsp;</td>');
-          }
         }
         images_table.append(tools_row);
       }
