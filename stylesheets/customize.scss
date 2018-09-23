@@ -1,0 +1,8 @@
+.noUi-connect, 
+input[type='button'].accent,
+input[type='button'].accent:hover, 
+input[type='button'].accent:focus, 
+input[type='button'].accent:active
+ {
+  background-color: $primary-color;
+}
