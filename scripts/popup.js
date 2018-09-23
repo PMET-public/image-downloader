@@ -314,11 +314,12 @@
   }
 
   function displayImages() {
-    $('#download_button').prop('disabled', false);
+    //$('#download_button').prop('disabled', visibleImages.length === 0).text('Download ' + visibleImages.length + ' matching image' + (visibleImages.length === 1 ? '' : 's'));
+    $('#download_button').button().button(visibleImages.length === 0 ? 'disable' : 'enable').text('Download ' + visibleImages.length + ' matching image' + (visibleImages.length === 1 ? '' : 's'));
 
     var images_table = $('#images_table').empty();
 
-    var toggle_all_checkbox_row = '<tr><th align="left" colspan="' + ls.columns + '"><label><input type="checkbox" id="toggle_all_checkbox" checked />Select all (' + visibleImages.length + ')</label></th></tr>';
+    var toggle_all_checkbox_row = '<tr><th align="left" colspan="' + ls.columns + '"><input type="checkbox" id="toggle_all_checkbox" checked /></th></tr>';
     images_table.append(toggle_all_checkbox_row);
 
     var columns = parseInt(ls.columns);
