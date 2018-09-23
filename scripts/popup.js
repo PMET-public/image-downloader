@@ -3,6 +3,12 @@
   /* jshint multistr: true */
   'use strict';
 
+  var tabDomain = null;
+  chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
+    var tabUrl = tabs[0].url;
+    tabDomain = tabUrl.substring(0,tabUrl.indexOf('/', 8))
+  });
+
   function initializePopup() {
     // Register download folder name listener
     $('#folder_name_textbox')
@@ -346,7 +352,7 @@
           if (index === visibleImages.length) break;
 
           if (show_image_url) {
-            tools_row.append('<td><input type="text" class="image_url_textbox" value="' + visibleImages[index] + '" readonly /></td>');
+            tools_row.append('<td><input type="text" class="image_url_textbox" value="' + visibleImages[index].replace(tabDomain,'') + '" readonly /></td>');
           }
 
           if (show_open_image_button) {
