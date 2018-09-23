@@ -314,11 +314,11 @@
   }
 
   function displayImages() {
-    $('#download_button').prop('disabled', true);
+    $('#download_button').prop('disabled', false);
 
     var images_table = $('#images_table').empty();
 
-    var toggle_all_checkbox_row = '<tr><th align="left" colspan="' + ls.columns + '"><label><input type="checkbox" id="toggle_all_checkbox" />Select all (' + visibleImages.length + ')</label></th></tr>';
+    var toggle_all_checkbox_row = '<tr><th align="left" colspan="' + ls.columns + '"><label><input type="checkbox" id="toggle_all_checkbox" checked />Select all (' + visibleImages.length + ')</label></th></tr>';
     images_table.append(toggle_all_checkbox_row);
 
     var columns = parseInt(ls.columns);
@@ -359,7 +359,7 @@
       for (var columnIndex = 0; columnIndex < columns; columnIndex++) {
         var index = rowIndex * columns + columnIndex;
         if (index === visibleImages.length) break;
-        var image = '<td colspan="' + colspan + '" style="min-width: ' + ls.image_max_width + 'px; width: ' + columnWidth + '; vertical-align: top;"><img id="image' + index + '" src="' + visibleImages[index] + '" /></td>';
+        var image = '<td colspan="' + colspan + '" style="min-width: ' + ls.image_max_width + 'px; width: ' + columnWidth + '; vertical-align: top;"><img id="image' + index + '" src="' + visibleImages[index] + '" class="checked" /></td>';
         images_row.append(image);
       }
       images_table.append(images_row);
