@@ -32,8 +32,8 @@
     only_images_from_links: false,
     // Options
     // General
-    show_download_confirmation: true,
-    show_download_notification: true,
+    show_download_confirmation: false,
+    show_download_notification: false,
     show_file_renaming: false,
     // Filters
     show_url_filter: true,
