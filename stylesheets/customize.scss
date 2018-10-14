@@ -11,19 +11,6 @@ input[type='button'].accent:active
   position: relative;
 }
 
-.found-image .mdi {
-  background-color: rgba(255, 255, 255, 0.7);
-  text-align: center;
-  line-height: 1.3em;
-  border-radius: 0.25em;
-}
-
-.found-image .mdi:hover {
-  background-color: rgba(255, 255, 255, 1);
-  text-align: center;
-  line-height: 1.2em;
-}
-
 .open_image_button, .download_image_button {
   background-image: none;
   position: absolute;
