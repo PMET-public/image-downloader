@@ -1,9 +1,37 @@
-.noUi-connect, 
-input[type='button'].accent,
-input[type='button'].accent:hover, 
-input[type='button'].accent:focus, 
-input[type='button'].accent:active
- {
+.grid {
+  td { 
+    padding: 0 2px; 
+  }
+  input[type='text'] { 
+    width: 93%; 
+  }
+  width: 100%;
+}
+
+#images_cache, #image_width_filter_min_checkbox, #image_width_filter_max_checkbox, #image_height_filter_min_checkbox, #image_height_filter_max_checkbox, #toggle_all_checkbox {
+  display: none;
+} 
+
+#filters_container {
+  td:first-of-type {
+    width: 10%;
+    text-align: right;
+  }
+  label {
+    display: inline-block;
+    text-align: right;
+    color: $color-normal-text;
+  }
+  // input[type='text'] {
+  //   width: 340px;
+  // }
+}
+
+.noUi-target {
+  width: 340px;
+}
+
+.noUi-connect {
   background-color: $color-primary;
 }
 
@@ -12,33 +40,18 @@ input[type='button'].accent:active
 }
 
 .open_image_button, .download_image_button {
-  background-image: none;
   position: absolute;
-  float: left;
-  top: 1.3em;
+  top: 32px;
+  left: 4px;
+  background-color: rgba(#fff, 0.7);
 }
 
 .open_image_button {
-  left: 30px;
-}
-
-#filter_inputs_container {
-  label {
-    float: right;
-  }
-  input {
-    width: 330px;
-  }
-}
-
-#filters_container {
-  border-bottom: none;
-}
-
-#toggle_all_checkbox {
-  display: none;
+  left: 36px;
 }
 
 #download_button {
-  margin: 7px;
+  margin: 10px auto;
+  display: block;
+  padding: 10px;
 }
