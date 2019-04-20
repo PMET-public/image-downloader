@@ -4,10 +4,10 @@
 
   const imageDownloader = {
     // Source: https://support.google.com/webmasters/answer/2598805?hl=en
-    imageRegex: /(?:([^:\/?#]+):)?(?:\/\/([^\/?#]*))?([^?#]*\.(?:bmp|gif|jpe?g|png|svg|webp))(?:\?([^#]*))?(?:#(.*))?/i,
+    imageRegex: /(?:([^:\/?#]+):)?(?:\/\/([^\/?#]*))?([^?#]*\.(?:bmp|gif|jpe?g|png|svg|webp|icon?))(?:\?([^#]*))?(?:#(.*))?/i,
 
     extractImagesFromTags() {
-      return [].slice.apply(document.querySelectorAll('img, a, [style], link')).map(imageDownloader.extractImageFromElement);
+      return [].slice.apply(document.querySelectorAll('img, a, [style], link, source')).map(imageDownloader.extractImageFromElement);
     },
 
     extractImagesFromStyles() {
@@ -50,6 +50,22 @@
         if (imageDownloader.isImageURL(href)) {
           imageDownloader.linkedImages[href] = '0';
           return href;
+        }
+      }
+
+      if (tag === 'source') {
+        const a = element.srcset.split(/ +/);
+        if (a.length) { 
+          var lastUrlOfSet = "";
+          a.forEach(src => {
+            if (imageDownloader.isImageURL(src)) {
+              lastUrlOfSet = src
+            }
+          })
+          if (imageDownloader.isImageURL(lastUrlOfSet)) {
+            imageDownloader.linkedImages[lastUrlOfSet] = '0';
+            return lastUrlOfSet;
+          }
         }
       }
 
