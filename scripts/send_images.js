@@ -81,7 +81,9 @@
     },
 
     extractURLFromStyle(url) {
-      return url.replace(/^url\(["']?/, '').replace(/["']?\)$/, '');
+      // could fail if ")" in url of background image
+      // wikipedia uses ")" in urls
+      return url.replace(/^url\(["']?/, '').replace(/["']?\).*/, '');
     },
 
     isImageURL(url) {
